@@ -25,6 +25,7 @@ module.exports.getAllModulesByUserId = async (req, res) => {
   const parentList = [];
 
   menuResult.forEach((eachMenu) => {
+    eachMenu.key = eachMenu.id;
     if (eachMenu.parentModuleId === 0) {
       eachMenu.children = [];
       parentList.push(eachMenu);
